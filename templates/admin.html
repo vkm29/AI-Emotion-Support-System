@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid mt-4">
+
+<div class="row">
+
+<div class="col-12">
+
+<h2>
+
+🛡️ AI Student Emotional Support
+Admin Dashboard
+
+</h2>
+
+<hr>
+
+</div>
+
+</div>
+
+<!-- Statistics -->
+
+<div class="row">
+
+<div class="col-md-3">
+
+<div class="card shadow border-primary">
+
+<div class="card-body text-center">
+
+<h5>Total Students</h5>
+
+<h1>{{ users }}</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card shadow border-success">
+
+<div class="card-body text-center">
+
+<h5>Total Chats</h5>
+
+<h1>{{ chats }}</h1>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card shadow border-warning">
+
+<div class="card-body text-center">
+
+<h5>Today's Date</h5>
+
+<h4>{{ moment if moment else "Today" }}</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card shadow border-danger">
+
+<div class="card-body text-center">
+
+<h5>System Status</h5>
+
+<h4 class="text-success">
+
+Online
+
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<br>
+
+<!-- Recent Chats -->
+
+<div class="card shadow">
+
+<div class="card-header bg-dark text-white">
+
+<h4>
+
+📝 Recent Chat Activity
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-primary">
+
+<tr>
+
+<th>ID</th>
+
+<th>User ID</th>
+
+<th>Emotion</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for chat in latest %}
+
+<tr>
+
+<td>{{ chat.id }}</td>
+
+<td>{{ chat.user_id }}</td>
+
+<td>
+
+{% if chat.emotion=="happy" %}
+
+<span class="badge bg-success">
+
+😊 Happy
+
+</span>
+
+{% elif chat.emotion=="stress" %}
+
+<span class="badge bg-warning">
+
+😫 Stress
+
+</span>
+
+{% elif chat.emotion=="sad" %}
+
+<span class="badge bg-primary">
+
+😔 Sad
+
+</span>
+
+{% elif chat.emotion=="anxiety" %}
+
+<span class="badge bg-danger">
+
+😟 Anxiety
+
+</span>
+
+{% elif chat.emotion=="angry" %}
+
+<span class="badge bg-dark">
+
+😠 Angry
+
+</span>
+
+{% else %}
+
+<span class="badge bg-secondary">
+
+😐 {{ chat.emotion }}
+
+</span>
+
+{% endif %}
+
+</td>
+
+<td>
+
+{{ chat.created_at.strftime('%d-%m-%Y %I:%M %p') }}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<br>
+
+<!-- Wellness Notice -->
+
+<div class="card shadow">
+
+<div class="card-header bg-info text-white">
+
+<h4>
+
+📢 Admin Notes
+
+</h4>
+
+</div>
+
+<div class="card-body">
+
+<div class="alert alert-info">
+
+<ul>
+
+<li>Monitor overall emotion trends rather than focusing on individual students.</li>
+
+<li>Respect student privacy and institutional policies.</li>
+
+<li>If a student appears to be at high risk and your institution's procedures allow it, follow your established safeguarding process and involve qualified staff.</li>
+
+<li>This AI system is a support tool and is not a replacement for mental health professionals.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

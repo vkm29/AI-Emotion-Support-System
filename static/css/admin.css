@@ -1,0 +1,386 @@
+/* ==========================================
+   Admin Dashboard CSS
+   AI Student Emotional Support System
+========================================== */
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+/* Main Container */
+
+.admin-container{
+
+    padding:30px;
+
+}
+
+/* Header */
+
+.admin-header{
+
+    background:linear-gradient(
+        135deg,
+        #1e3a8a,
+        #2563eb
+    );
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.admin-header h2{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+}
+
+.admin-header p{
+
+    font-size:17px;
+
+    opacity:.9;
+
+}
+
+/* KPI Cards */
+
+.kpi-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    color:white;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.kpi-card .card-body{
+
+    padding:30px;
+
+}
+
+.kpi-card h2{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+.kpi-card h5{
+
+    margin-top:10px;
+
+}
+
+.bg-users{
+
+    background:#2563eb;
+
+}
+
+.bg-chat{
+
+    background:#16a34a;
+
+}
+
+.bg-risk{
+
+    background:#dc2626;
+
+}
+
+.bg-active{
+
+    background:#f59e0b;
+
+}
+
+/* Recent Activity */
+
+.activity-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    margin-top:25px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+.activity-card .card-header{
+
+    background:#111827;
+
+    color:white;
+
+    font-size:20px;
+
+}
+
+/* Tables */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table th{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.table-hover tbody tr:hover{
+
+    background:#eef5ff;
+
+}
+
+/* Risk Badge */
+
+.badge-risk{
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+}
+
+.badge-medium{
+
+    background:#f59e0b;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+}
+
+.badge-safe{
+
+    background:#16a34a;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+}
+
+/* Alert Panel */
+
+.alert-panel{
+
+    border-left:6px solid #dc2626;
+
+    background:#fff1f2;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-top:25px;
+
+}
+
+.alert-panel h4{
+
+    color:#b91c1c;
+
+}
+
+/* Analytics Box */
+
+.analytics-box{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
+
+/* Buttons */
+
+.admin-btn{
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+    padding:12px 25px;
+
+    transition:.3s;
+
+}
+
+.admin-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    background:#111827;
+
+    min-height:100vh;
+
+    color:white;
+
+    padding:20px;
+
+}
+
+.sidebar a{
+
+    color:white;
+
+    display:block;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:#2563eb;
+
+}
+
+/* Progress */
+
+.progress{
+
+    height:22px;
+
+    border-radius:15px;
+
+}
+
+.progress-bar{
+
+    font-weight:bold;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.admin-container{
+
+padding:15px;
+
+}
+
+.kpi-card{
+
+margin-bottom:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.admin-header{
+
+text-align:center;
+
+padding:25px;
+
+}
+
+.admin-header h2{
+
+font-size:26px;
+
+}
+
+.table{
+
+font-size:14px;
+
+}
+
+.sidebar{
+
+min-height:auto;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.kpi-card h2{
+
+font-size:28px;
+
+}
+
+.admin-btn{
+
+width:100%;
+
+margin-bottom:10px;
+
+}
+
+}

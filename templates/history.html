@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}
+Chat History
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-dark text-white">
+
+                    <div class="d-flex justify-content-between">
+
+                        <h3>
+
+                            💬 Chat History
+
+                        </h3>
+
+                        <input
+                            type="text"
+                            id="search"
+                            class="form-control w-25"
+                            placeholder="Search Chat..."
+                            onkeyup="searchChat()">
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="card-body"
+                    style="
+                    max-height:650px;
+                    overflow-y:auto;
+                    ">
+
+                    {% if chats %}
+
+                        {% for chat in chats %}
+
+                        <div class="card mb-4 border-primary history-card">
+
+                            <div class="card-header bg-light">
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
+
+                                        <strong>
+
+                                            {{ chat.created_at.strftime('%d-%m-%Y %I:%M %p') }}
+
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="col-md-3">
+
+                                        <span class="badge bg-success">
+
+                                            {{ chat.emotion }}
+
+                                        </span>
+
+                                    </div>
+
+                                    <div class="col-md-3 text-end">
+
+                                        <span class="badge bg-primary">
+
+                                            {{ chat.sentiment }}
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-body">
+
+                                <h5 class="text-primary">
+
+                                    👤 Student
+
+                                </h5>
+
+                                <p>
+
+                                    {{ chat.user_message }}
+
+                                </p>
+
+                                <hr>
+
+                                <h5 class="text-success">
+
+                                    🤖 AI Assistant
+
+                                </h5>
+
+                                <pre style="white-space:pre-wrap;">
+
+{{ chat.ai_response }}
+
+                                </pre>
+
+                            </div>
+
+                        </div>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="alert alert-info">
+
+                            No Chat History Found.
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function searchChat(){
+
+let input=document.getElementById("search");
+
+let filter=input.value.toLowerCase();
+
+let cards=document.getElementsByClassName("history-card");
+
+for(let i=0;i<cards.length;i++){
+
+let text=cards[i].innerText.toLowerCase();
+
+if(text.indexOf(filter)>-1){
+
+cards[i].style.display="";
+
+}
+
+else{
+
+cards[i].style.display="none";
+
+}
+
+}
+
+}
+
+</script>
+
+{% endblock %}

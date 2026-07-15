@@ -1,0 +1,402 @@
+/* ==========================================
+   Dashboard CSS
+   AI Student Emotional Support System
+========================================== */
+
+.dashboard-container{
+
+    padding:30px;
+
+}
+
+/* Welcome Card */
+
+.welcome-card{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+.welcome-card h2{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+}
+
+.welcome-card p{
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+/* Statistics */
+
+.stats-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    color:white;
+
+}
+
+.stats-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+}
+
+.stats-card .card-body{
+
+    padding:30px;
+
+}
+
+.stats-card h5{
+
+    font-size:18px;
+
+}
+
+.stats-card h2{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+}
+
+/* Card Colors */
+
+.bg-chat{
+
+    background:#2563eb;
+
+}
+
+.bg-emotion{
+
+    background:#10b981;
+
+}
+
+.bg-journal{
+
+    background:#f59e0b;
+
+}
+
+.bg-score{
+
+    background:#8b5cf6;
+
+}
+
+/* Dashboard Menu */
+
+.menu-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.menu-card:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:scale(1.05);
+
+}
+
+.menu-card i{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+/* Progress Card */
+
+.progress-card{
+
+    border-radius:20px;
+
+    padding:25px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.progress{
+
+    height:22px;
+
+    border-radius:20px;
+
+}
+
+.progress-bar{
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+/* Mood Timeline */
+
+.timeline{
+
+    position:relative;
+
+    margin-left:20px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:10px;
+
+    width:4px;
+
+    background:#2563eb;
+
+    top:0;
+
+    bottom:0;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:40px;
+
+    margin-bottom:25px;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    position:absolute;
+
+    left:2px;
+
+    top:4px;
+
+}
+
+/* Emotion Cards */
+
+.emotion-box{
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+.happy{
+
+    background:#22c55e;
+
+}
+
+.sad{
+
+    background:#3b82f6;
+
+}
+
+.stress{
+
+    background:#f97316;
+
+}
+
+.anxiety{
+
+    background:#ef4444;
+
+}
+
+.neutral{
+
+    background:#6b7280;
+
+}
+
+/* Quick Actions */
+
+.action-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+/* Graph Section */
+
+.chart-card{
+
+    border-radius:20px;
+
+    padding:20px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+/* Notifications */
+
+.notification{
+
+    padding:18px;
+
+    border-left:6px solid #2563eb;
+
+    background:#eef5ff;
+
+    margin-bottom:15px;
+
+    border-radius:10px;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.dashboard-container{
+
+padding:15px;
+
+}
+
+.welcome-card{
+
+padding:25px;
+
+}
+
+.stats-card{
+
+margin-bottom:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.welcome-card h2{
+
+font-size:26px;
+
+}
+
+.stats-card h2{
+
+font-size:28px;
+
+}
+
+.menu-card{
+
+margin-bottom:20px;
+
+}
+
+.action-btn{
+
+font-size:16px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.welcome-card{
+
+text-align:center;
+
+}
+
+.chart-card{
+
+overflow-x:auto;
+
+}
+
+}

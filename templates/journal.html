@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+{% block title %}
+Daily Journal
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="row">
+
+        <!-- Left Side -->
+
+        <div class="col-lg-4">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h4>
+
+                        📖 Daily Journal
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <h5>
+
+                        Today's Prompt
+
+                    </h5>
+
+                    <hr>
+
+                    <div class="alert alert-info">
+
+                        {{ prompt.prompt }}
+
+                    </div>
+
+                    <h5>
+
+                        AI Suggestion
+
+                    </h5>
+
+                    <div class="alert alert-success">
+
+                        {{ prompt.suggestion }}
+
+                    </div>
+
+                    <hr>
+
+                    <h5>
+
+                        Tips
+
+                    </h5>
+
+                    <ul>
+
+                        <li>Write honestly.</li>
+
+                        <li>Do not judge yourself.</li>
+
+                        <li>Describe today's emotions.</li>
+
+                        <li>Write at least 50 words.</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="col-lg-8">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-success text-white">
+
+                    <h4>
+
+                        ✍ Write Your Journal
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form method="POST"
+                          action="/save_journal">
+
+                        <!-- Emotion -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Current Emotion
+
+                            </label>
+
+                            <select
+                                name="emotion"
+                                class="form-select">
+
+                                <option>happy</option>
+                                <option>sad</option>
+                                <option>stress</option>
+                                <option>anxiety</option>
+                                <option>angry</option>
+                                <option>lonely</option>
+                                <option>confused</option>
+                                <option>motivated</option>
+                                <option>neutral</option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Journal -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Journal
+
+                            </label>
+
+                            <textarea
+
+                                name="journal"
+
+                                rows="12"
+
+                                class="form-control"
+
+                                placeholder="Write about your day..."></textarea>
+
+                        </div>
+
+                        <button
+                            class="btn btn-primary">
+
+                            💾 Save Journal
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            {% if result %}
+
+            <div class="card shadow mt-4">
+
+                <div class="card-header bg-dark text-white">
+
+                    <h4>
+
+                        📊 Journal Analysis
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table">
+
+                        <tr>
+
+                            <th>Date</th>
+
+                            <td>
+
+                                {{ result.date }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Emotion</th>
+
+                            <td>
+
+                                {{ result.emotion }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Words</th>
+
+                            <td>
+
+                                {{ result.word_count }}
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>Characters</th>
+
+                            <td>
+
+                                {{ result.character_count }}
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                    <div class="alert alert-info">
+
+                        {{ result.summary }}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,384 @@
+/* ==========================================
+   Journal CSS
+   AI Student Emotional Support System
+========================================== */
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+/* Journal Container */
+
+.journal-container{
+
+    padding:30px;
+
+}
+
+/* Left Panel */
+
+.prompt-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.prompt-card .card-header{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.prompt-card .card-body{
+
+    padding:30px;
+
+}
+
+.prompt-card h5{
+
+    color:#2563eb;
+
+    font-weight:bold;
+
+}
+
+.prompt-card .alert{
+
+    border-radius:12px;
+
+}
+
+/* Journal Editor */
+
+.editor-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.editor-card .card-header{
+
+    background:#16a34a;
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+textarea{
+
+    resize:none;
+
+    border-radius:15px;
+
+    min-height:350px;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    padding:20px;
+
+    border:2px solid #ddd;
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 12px rgba(37,99,235,.2);
+
+}
+
+/* Emotion Dropdown */
+
+.form-select{
+
+    border-radius:12px;
+
+    height:50px;
+
+    font-size:16px;
+
+}
+
+/* Save Button */
+
+.save-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px 35px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.save-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* Analysis Card */
+
+.analysis-card{
+
+    margin-top:30px;
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.analysis-card .card-header{
+
+    background:#111827;
+
+    color:white;
+
+    font-size:22px;
+
+}
+
+.analysis-card table{
+
+    margin-top:20px;
+
+}
+
+.analysis-card td{
+
+    font-size:16px;
+
+}
+
+/* Summary */
+
+.summary-box{
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#eef5ff;
+
+    border-left:6px solid #2563eb;
+
+    margin-top:20px;
+
+}
+
+/* Tips */
+
+.tip-box{
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#fef3c7;
+
+    margin-top:15px;
+
+}
+
+.tip-box ul{
+
+    margin-left:20px;
+
+}
+
+/* Journal History */
+
+.history-card{
+
+    margin-top:30px;
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.history-item{
+
+    padding:15px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.history-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.history-date{
+
+    font-size:14px;
+
+    color:#666;
+
+}
+
+.history-emotion{
+
+    display:inline-block;
+
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:13px;
+
+}
+
+.emotion-happy{
+
+    background:#22c55e;
+
+}
+
+.emotion-sad{
+
+    background:#3b82f6;
+
+}
+
+.emotion-stress{
+
+    background:#f97316;
+
+}
+
+.emotion-anxiety{
+
+    background:#ef4444;
+
+}
+
+.emotion-angry{
+
+    background:#dc2626;
+
+}
+
+.emotion-neutral{
+
+    background:#6b7280;
+
+}
+
+/* Character Counter */
+
+.counter{
+
+    text-align:right;
+
+    color:#666;
+
+    margin-top:10px;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.journal-container{
+
+padding:15px;
+
+}
+
+.prompt-card{
+
+margin-bottom:25px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+textarea{
+
+min-height:250px;
+
+}
+
+.save-btn{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.prompt-card .card-header,
+
+.editor-card .card-header,
+
+.analysis-card .card-header{
+
+font-size:18px;
+
+}
+
+textarea{
+
+font-size:15px;
+
+}
+
+}

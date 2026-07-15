@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}
+AI Emotional Support Chat
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/chat.css') }}">
+
+<div class="container mt-4">
+
+<div class="chat-container">
+
+    <!-- Header -->
+
+    <div class="chat-header">
+
+        <div class="d-flex align-items-center">
+
+            <img
+            src="{{ url_for('static', filename='images/bot.png') }}"
+            class="avatar">
+
+            <div class="ms-3">
+
+                <h3>
+
+                    AI Emotional Support
+
+                </h3>
+
+                <small>
+
+                    Hello {{ current_user.name }}
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <button
+        class="btn btn-light"
+        onclick="clearChat()">
+
+        Clear Chat
+
+        </button>
+
+    </div>
+
+    <!-- Chat Messages -->
+
+    <div
+    id="chat-box"
+    class="chat-body">
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="chat-footer">
+
+        <div class="chat-input">
+
+            <textarea
+
+            id="message"
+
+            placeholder="Type your feelings here..."></textarea>
+
+            <button
+
+            class="send-btn"
+
+            onclick="sendMessage()">
+
+            ➤
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+{% endblock %}

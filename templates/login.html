@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login | AI Emotion Support System
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-5 col-md-7">
+
+        <div class="card shadow-lg border-0 rounded-4">
+
+            <div class="card-body p-5">
+
+                <div class="text-center mb-4">
+
+                    <i class="bi bi-person-circle display-3 text-primary"></i>
+
+                    <h2 class="fw-bold mt-3">
+
+                        Welcome Back
+
+                    </h2>
+
+                    <p class="text-muted">
+
+                        Login to continue
+
+                    </p>
+
+                </div>
+
+                <form method="POST">
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Email Address
+
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Password
+
+                        </label>
+
+                        <div class="input-group">
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required>
+
+                            <button
+                                class="btn btn-outline-secondary"
+                                type="button"
+                                onclick="togglePassword()">
+
+                                <i class="bi bi-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Remember Me -->
+
+                    <div class="form-check mb-3">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="remember">
+
+                        <label
+                            class="form-check-label"
+                            for="remember">
+
+                            Remember Me
+
+                        </label>
+
+                    </div>
+
+                    <!-- Login Button -->
+
+                    <div class="d-grid">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-lg">
+
+                            <i class="bi bi-box-arrow-in-right"></i>
+
+                            Login
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <div class="text-end mt-3">
+
+                    <a href="#">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+                <hr>
+
+                <div class="text-center">
+
+                    Don't have an account?
+
+                    <a href="{{ url_for('auth.register') }}">
+
+                        Register Here
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function togglePassword() {
+
+    const password = document.getElementById("password");
+
+    if(password.type === "password")
+    {
+        password.type = "text";
+    }
+    else
+    {
+        password.type = "password";
+    }
+
+}
+
+</script>
+
+{% endblock %}
